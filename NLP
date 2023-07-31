@@ -1,0 +1,33 @@
+# Importing necessary libraries
+import nltk
+from nltk.tokenize import word_tokenize
+from collections import Counter
+
+# Sample text for NLP analysis
+text = "Natural Language Processing (NLP) is a subfield of artificial intelligence that focuses on the interaction between computers and humans using natural language."
+
+# Step 1: Tokenization - Splitting the text into individual words
+tokens = word_tokenize(text)
+
+# Step 2: Converting tokens to lowercase for case-insensitive analysis
+tokens = [token.lower() for token in tokens]
+
+# Step 3: Removing punctuation and other non-alphanumeric characters
+# (Note: We'll keep the hyphens and apostrophes for now)
+tokens = [token for token in tokens if token.isalnum()]
+
+# Step 4: Counting word frequencies using the Counter class from collections
+word_freq = Counter(tokens)
+
+# Step 5: Displaying the original text
+print("Original Text:")
+print(text)
+
+# Step 6: Displaying the tokens after tokenization
+print("\nTokens after tokenization:")
+print(tokens)
+
+# Step 7: Displaying the word frequencies
+print("\nWord Frequencies:")
+for word, freq in word_freq.items():
+    print(f"{word}: {freq}")
