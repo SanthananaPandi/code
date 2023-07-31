@@ -1,0 +1,40 @@
+# Importing necessary modules
+import random #To import random numbers
+
+# Function to generate a list of random integers between 1 and 100
+def generate_random_list(size):
+    # Initialize an empty list
+    random_list = []
+    for _ in range(size):# _ is a placeholder
+        # Generate a random integer between 1 and 100
+        num = random.randint(1, 100)
+        # Append the random integer to the list
+        random_list.append(num)
+    return random_list
+
+# Function to calculate the average of a list of numbers
+def calculate_average(numbers):
+    # Calculate the sum of all numbers in the list
+    total_sum = sum(numbers)
+    # Calculate the number of elements in the list
+    num_elements = len(numbers)
+    # Calculate the average by dividing the sum by the number of elements
+    average = total_sum / num_elements
+    return average
+
+# Main function
+def main():
+    # Set the size of the random list
+    list_size = 10
+    # Generate a random list
+    my_list = generate_random_list(list_size)
+    print("Generated random list:", my_list)
+    
+    # Calculate the average of the generated list
+    avg = calculate_average(my_list)
+    print("Average of the list:", avg)
+
+# Execute the main function if this script is run directly
+if __name__ == "__main__":
+    # Call the main function
+    main()
