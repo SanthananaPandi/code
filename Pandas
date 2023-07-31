@@ -1,0 +1,46 @@
+# Importing the pandas library
+import pandas as pd
+
+# Sample data in the form of a dictionary
+data = {
+    'Name': ['Abinash', 'Vijay', 'Hari', 'Manoj', 'Aravind'],
+    'Age': [25, 30, 22, 28, 35],
+    'City': ['Trichy', 'Chennai', 'Madurai', 'Coimbatore', 'Ooty']
+}
+
+# Creating a DataFrame from the dictionary
+df = pd.DataFrame(data)
+
+# Displaying the DataFrame
+print("DataFrame:")
+print(df)
+
+# Describing basic statistics of the DataFrame
+print("\nDataFrame Statistics:")
+print(df.describe())
+
+# Filtering the DataFrame to show people older than 25
+print("\nPeople older than 25:")
+print(df[df['Age'] > 25])
+
+# Sorting the DataFrame by age in descending order
+print("\nSorted by age (descending):")
+print(df.sort_values(by='Age', ascending=False))
+
+# Adding a new column to the DataFrame
+df['Profession'] = ['Engineer', 'Doctor', 'Artist', 'Lawyer', 'Chef']
+
+# Displaying the updated DataFrame with the new column
+print("\nUpdated DataFrame with Profession:")
+print(df)
+
+# Grouping the DataFrame by City and displaying the mean age for each city
+print("\nMean age for each City:")
+print(df.groupby('City')['Age'].mean())
+
+# Dropping the 'Profession' column from the DataFrame
+df = df.drop(columns='Profession')
+
+# Displaying the DataFrame after dropping the column
+print("\nDataFrame after dropping 'Profession' column:")
+print(df)
